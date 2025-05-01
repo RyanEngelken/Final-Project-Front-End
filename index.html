@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+  if (!localStorage.getItem("token")) {
+    window.location.href = "login.html";
+  }
+</script>
     <meta charset="UTF-8" />
     <title> All Courses</title>
     <script defer src="/scripts/script.js"></script>
@@ -15,6 +20,7 @@
           <li><a href="my_schedule.html">My Schedule</a></li>
           <li><a href="add_courses.html">Add Courses</a></li>
           <li><a href="edit_courses.html">Edit Courses</a></li>
+          <button id="logoutBtn">Logout</button>
         </ul>
         <div class="hamburger" id="hamburger">
           <div class="bar"></div>

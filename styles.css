@@ -228,7 +228,6 @@ form textarea {
 }
 
 /* BUTTONS */ 
-
 form button {
     background-color: black;
     color: white;
@@ -245,6 +244,7 @@ form button:hover {
     background-color: #963109;
 }
 
+/* MODALS */
 .modal {
     display: none;
     position: fixed;

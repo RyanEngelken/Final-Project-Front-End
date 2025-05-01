@@ -17,19 +17,16 @@ async function loadCourses() {
             const card = document.createElement('div');
             card.className = 'course-card';
 
-            card.innerHTML = `
-                <h2>${course.courseName}</h2>
-                <p>${course.courseDescription}</p>
-                <div class="course-info">Course ID: ${course.courseId}</div>
-                <div class="course-info">Instructor: ${course.instructor}</div>
-                                <div class="course-info">Time: ${course.dayOfWeek} at ${course.timeOfClass}</div>
+    card.innerHTML = `
+    Course Name<h2>${course.courseName}</h2>
+    <div class="course-info">Course ID: ${course.courseId}</div>
+    <div class="course-info">Instructor: ${course.instructor}</div>
+    <div class="card-buttons">
+        <button class="btn edit-btn" data-course='${JSON.stringify(course)}'>Edit</button>
+        <button class="btn delete-btn" data-id="${course._id}">Delete</button>
+    </div>
+`;
 
-                <div class="course-info">Location: ${course.location}</div>
-                <div class="card-buttons">
-                    <button class="btn edit-btn" data-course='${JSON.stringify(course)}'>Edit</button>
-                    <button class="btn delete-btn" data-id="${course._id}">Delete</button>
-                </div>
-            `;
 
             container.appendChild(card);
         });
