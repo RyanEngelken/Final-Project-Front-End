@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', loadCourses);
 
 async function loadCourses() {
-    const response = await fetch('http://localhost:3000/api/courses');
+    const response = await fetch('https://selective-garnet-discovery.glitch.me/api/courses');
     const courses = await response.json();
 
     const coursesContainer = document.getElementById('courses-container');

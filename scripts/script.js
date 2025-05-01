@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const coursesContainer = document.getElementById('courses-container');
     
-    fetch('http://localhost:3000/api/courses')
+    fetch('https://selective-garnet-discovery.glitch.me/api/courses')
         .then(response => response.json())
         .then(courses => {
             courses.forEach(course => {

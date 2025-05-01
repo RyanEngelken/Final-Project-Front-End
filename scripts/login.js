@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://selective-garnet-discovery.glitch.me/api";
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const res = await fetch('http://localhost:3000/api/auth', {
+    const res = await fetch('https://selective-garnet-discovery.glitch.me/api/auth', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const username = document.getElementById("newUsername").value;
     const password = document.getElementById("newPassword").value;
 
-    const res = await fetch('http://localhost:3000/api/users', {
+    const res = await fetch('https://selective-garnet-discovery.glitch.me/api/users', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -15,7 +15,7 @@ async function addCourse(event) {
         location: document.querySelector("#location").value
     };
 
-    const response = await fetch("http://localhost:3000/api/courses", {
+    const response = await fetch("https://selective-garnet-discovery.glitch.me/api/courses", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
