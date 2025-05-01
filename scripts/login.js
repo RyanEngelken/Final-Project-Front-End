@@ -38,13 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const username = document.getElementById("newUsername").value;
     const password = document.getElementById("newPassword").value;
+    const role = document.getElementById("role").value;
+    console.log("Role:", role);
 
     const res = await fetch('https://selective-garnet-discovery.glitch.me/api/users', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password, role }),
     });
 
     if (res.ok) {
