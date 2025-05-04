@@ -10,16 +10,27 @@
     <title>Add Courses</title>
     <script defer src="./scripts/add.js"></script>
     <script defer src="./scripts/navscript.js"></script>
+    <script>
+      const token = localStorage.getItem("token");
+      const role = localStorage.getItem("role");
+
+      if (!token) {
+        window.location.href = "login.html";
+      } else if (role !== "teacher") {
+        alert("Access denied: Only teachers can add courses.");
+        window.location.href = "index.html";
+      }
+    </script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <nav class="navbar">
       <div class="nav-container">
         <ul class="nav-links" id="navLinks">
-          <li><a href="index.html">All Courses</a></li>
-          <li><a href="my_schedule.html">My Schedule</a></li>
-          <li><a href="add_courses.html">Add Courses</a></li>
-          <li><a href="edit_courses.html">Edit Courses</a></li>
+          <li><a href="./index.html">All Courses</a></li>
+          <li><a href="./my_schedule.html">My Schedule</a></li>
+          <li><a href="./add_courses.html">Add Courses</a></li>
+          <li><a href="./edit_courses.html">Edit Courses</a></li>
           <button id="logoutBtn">Logout</button>
         </ul>
         <div class="hamburger" id="hamburger">

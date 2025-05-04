@@ -15,9 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (userRole === "teacher") {
     document.getElementById("createCourseButton").style.display = "block";
     document.getElementById("deleteCourseButton").style.display = "none";
-  } else if (userRole === "admin") {
-    document.getElementById("createCourseButton").style.display = "block";
-    document.getElementById("deleteCourseButton").style.display = "block";
   } else {
     window.location.href = "login.html";
   }

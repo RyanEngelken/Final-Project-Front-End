@@ -2,16 +2,23 @@
 <html lang="en">
   <head>
     <script>
-      if (!localStorage.getItem("token")) {
+      const token = localStorage.getItem("token");
+      const role = localStorage.getItem("role");
+
+      // Redirect to login if no token
+      if (!token) {
         window.location.href = "login.html";
+      } else if (role !== "teacher") {
+        alert("Access denied: Teachers only.");
+        window.location.href = "index.html";
       }
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Courses</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script src="./scripts/edit.js"></script>
-    <script src="./scripts/navscript.js"></script>
+    <script src="./scripts/edit.js" defer></script>
+    <script src="./scripts/navscript.js" defer></script>
   </head>
   <body>
     <nav class="navbar">

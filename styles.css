@@ -16,6 +16,8 @@ h1 {
     text-align: center;
 }
 
+/* COURSE CARDS */
+
 #courses-container {
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +26,6 @@ h1 {
     padding: 20px;
 }
 
-/* COURSE CARDS */
 
 .course-card {
     display: flex;
@@ -67,7 +68,6 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 10px;
-
 }
 
 .course-card .btn {
@@ -85,6 +85,81 @@ h1 {
 
 .course-card .btn:hover {
     background-color: #963109;
+}
+
+/* DROP BUTTON */
+.drop-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.drop-button:hover {
+    background-color: #c82333;
+}
+
+/* SCHEDULE TABLE */
+.schedule-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.schedule-table th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.schedule-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.schedule-table .drop-button {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .schedule-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        min-width: 100px;
+    }
+
+    .schedule-table .drop-button {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* NAVBAR */
@@ -144,6 +219,27 @@ h1 {
     height: 4px;
     background-color: white;
     border-radius: 2px;
+}
+
+/* ENROLL BUTTTON */
+
+.enroll-button {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.enroll-button:hover {
+    background-color: #218838;
+}
+
+.enroll-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
 }
 
 /* RESPONSIVE NAVBAR */
@@ -227,7 +323,6 @@ form textarea {
     height: 100px;
 }
 
-/* BUTTONS */ 
 form button {
     background-color: black;
     color: white;
