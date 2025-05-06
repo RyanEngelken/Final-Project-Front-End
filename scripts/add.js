@@ -21,12 +21,13 @@ async function addCourse(event) {
     courseId: document.querySelector("#courseId").value,
     dayOfWeek: document.querySelector("#dayOfWeek").value,
     timeOfClass: document.querySelector("#timeOfClass").value,
-    location: document.querySelector("#location").value
+    creditHours: document.querySelector("#creditHours").value,
+    subjectArea: document.querySelector("#subjectArea").value
   };
 
   // Add Post
   try {
-    const response = await fetch("https://foremost-zinc-beat.glitch.me/api/courses", {
+    const response = await fetch("http://localhost:3000/api/courses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

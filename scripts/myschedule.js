@@ -13,7 +13,7 @@ async function loadCourses() {
   }
 
   try {
-    const response = await fetch('https://foremost-zinc-beat.glitch.me/api/courses?enrolled=true', {
+    const response = await fetch('http://localhost:3000/api/courses?enrolled=true', {
       headers: {
         'x-auth': token
       }
@@ -49,8 +49,9 @@ async function loadCourses() {
           <th>Instructor</th>
           <th>Day</th>
           <th>Time</th>
-          <th>Location</th>
-          <th>Actions</th>
+          <th>Credit Hours</th>
+          <th>Subject</th>
+          <th>Drop</th>
         </tr>
       </thead>
       <tbody>
@@ -66,7 +67,8 @@ async function loadCourses() {
         <td>${course.instructor}</td>
         <td>${course.dayOfWeek}</td>
         <td>${course.timeOfClass}</td>
-        <td>${course.location}</td>
+        <td>${course.creditHours}</td>
+        <td>${course.subjectArea}</td>
         <td><button class="drop-button" data-id="${course._id}">Drop</button></td>
       `;
       tbody.appendChild(row);
@@ -80,7 +82,7 @@ async function loadCourses() {
         const courseId = this.dataset.id;
         if (confirm('Are you sure you want to drop this course?')) {
           try {
-            const response = await fetch(`https://foremost-zinc-beat.glitch.me/api/courses/${courseId}/drop`, {
+            const response = await fetch(`http://localhost:3000/api/courses/${courseId}/drop`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

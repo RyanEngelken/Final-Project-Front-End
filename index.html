@@ -31,6 +31,18 @@
     </nav>
 
     <h1>All Courses</h1>
+    <div class="search-container">
+      <form id="searchForm">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by Course ID or Name"
+          aria-label="Search courses"
+        />
+        <button type="submit">Search</button>
+        <button type="button" id="clearSearchBtn">Clear Search</button>
+      </form>
+    </div>
     <div id="courses-container"></div>
   </body>
 </html>

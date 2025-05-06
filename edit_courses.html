@@ -5,7 +5,6 @@
       const token = localStorage.getItem("token");
       const role = localStorage.getItem("role");
 
-      // Redirect to login if no token
       if (!token) {
         window.location.href = "login.html";
       } else if (role !== "teacher") {
@@ -48,6 +47,12 @@
         <form id="editForm">
           <input type="hidden" id="courseId" name="_id" />
 
+          <label for="instructor">Instructor:</label>
+          <input type="text" id="instructor" name="instructor" required />
+
+          <label for="courseIdVisible">Course ID:</label>
+          <input type="text" id="courseIdVisible" name="courseId" required />
+
           <label for="courseName">Course Name:</label>
           <input type="text" id="courseName" name="courseName" required />
 
@@ -58,11 +63,8 @@
             required
           ></textarea>
 
-          <label for="instructor">Instructor:</label>
-          <input type="text" id="instructor" name="instructor" required />
-
-          <label for="courseIdVisible">Course ID:</label>
-          <input type="text" id="courseIdVisible" name="courseId" required />
+          <label for="subjectArea">Subject:</label>
+          <input type="text" id="subjectArea" name="subjectArea" required />
 
           <label for="dayOfWeek">Day of Week:</label>
           <input type="text" id="dayOfWeek" name="dayOfWeek" required />
@@ -70,8 +72,15 @@
           <label for="timeOfClass">Time of Class:</label>
           <input type="text" id="timeOfClass" name="timeOfClass" required />
 
-          <label for="location">Location:</label>
-          <input type="text" id="location" name="location" required />
+          <label for="creditHours">Credit Hours:</label>
+          <input
+            type="number"
+            id="creditHours"
+            name="creditHours"
+            min="1"
+            max="6"
+            required
+          />
 
           <button type="submit" class="btn">Save Changes</button>
         </form>

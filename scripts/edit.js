@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fetching all courses
   async function loadCourses() {
     try {
-      const response = await fetch(`https://foremost-zinc-beat.glitch.me/api/courses?owner=${userId}`, {
+      const response = await fetch(`http://localhost:3000/api/courses?owner=${userId}`, {
         headers: {
           'x-auth': token 
         }
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const courseId = this.dataset.id;
         if (confirm('Are you sure you want to delete this course?')) {
           try {
-            const response = await fetch(`https://foremost-zinc-beat.glitch.me/api/courses/${courseId}`, {
+            const response = await fetch(`http://localhost:3000/api/courses/${courseId}`, {
               method: 'DELETE',
               headers: {
                 'x-auth': token
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', async function () {
         const courseId = this.dataset.id;
         try {
-          const response = await fetch(`https://foremost-zinc-beat.glitch.me/api/courses/${courseId}`, {
+          const response = await fetch(`http://localhost:3000/api/courses/${courseId}`, {
             headers: {
               'x-auth': token
             }
@@ -151,8 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('instructor').value = course.instructor;
     document.getElementById('courseIdVisible').value = course.courseId;
     document.getElementById('timeOfClass').value = course.timeOfClass;
-    document.getElementById('location').value = course.location;
+    document.getElementById('creditHours').value = course.creditHours;
     document.getElementById('dayOfWeek').value = course.dayOfWeek;
+    document.getElementById('subjectArea').value = course.subjectArea;
 
     editModal.style.display = 'block';
   }
@@ -180,12 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
       courseId: document.getElementById('courseIdVisible').value,
       dayOfWeek: document.getElementById('dayOfWeek').value,
       timeOfClass: document.getElementById('timeOfClass').value,
-      location: document.getElementById('location').value
+      creditHours: document.getElementById('creditHours').value,
+      subjectArea: document.getElementsByTagName(`subjectArea`).value
     };
 
     // Edit Post
     try {
-      const response = await fetch(`https://foremost-zinc-beat.glitch.me/api/courses/${id}`, {
+      const response = await fetch(`http://localhost:3000/api/courses/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

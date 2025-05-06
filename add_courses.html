@@ -40,25 +40,20 @@
         </div>
       </div>
     </nav>
-
     <h1>Add a New Course</h1>
-
     <form id="addCourseForm">
       <div>
         <label for="instructor">Instructor:</label>
         <input type="text" id="instructor" name="instructor" required />
       </div>
-
-      <div>
-        <label for="courseName">Course Name:</label>
-        <input type="text" id="courseName" name="courseName" required />
-      </div>
-
       <div>
         <label for="courseId">Course ID:</label>
         <input type="text" id="courseId" name="courseId" required />
       </div>
-
+      <div>
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" name="courseName" required />
+      </div>
       <div>
         <label for="courseDescription">Course Description:</label>
         <textarea
@@ -66,8 +61,11 @@
           name="courseDescription"
           required
         ></textarea>
+        <div>
+        <label for="subjectArea">Subject:</label>
+        <input type="text" id="subjectArea" name="subjectArea" required />
       </div>
-
+      </div>
       <div>
         <label for="dayOfWeek">Days of the Week:</label>
         <select id="dayOfWeek" name="dayOfWeek" multiple required>
@@ -80,7 +78,6 @@
           <option value="Sunday">Sunday</option>
         </select>
       </div>
-
       <div>
         <label for="timeOfClass">Class Time (e.g., 6:00pm - 8:00pm):</label>
         <input
@@ -91,11 +88,15 @@
           required
         />
       </div>
-
-      <div>
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required />
-      </div>
+      <label for="creditHours">Credit Hours:</label>
+      <input
+        type="number"
+        id="creditHours"
+        name="creditHours"
+        min="1"
+        max="6"
+        required
+      />
 
       <button type="submit" id="addBtn">Add Course</button>
     </form>

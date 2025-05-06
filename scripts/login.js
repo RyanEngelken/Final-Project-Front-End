@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
 
     try {
-      const res = await fetch(`https://foremost-zinc-beat.glitch.me/api/auth`, {
+      const res = await fetch(`http://localhost:3000/api/auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.role);    
         localStorage.setItem("username", data.username);
-        localStorage.setItem("userId", data._id); // Store user ID
+        localStorage.setItem("userId", data._id); 
         window.location.href = "index.html";
       } else {
         const errorData = await res.json();
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const res = await fetch(`https://foremost-zinc-beat.glitch.me/api/users`, {
+      const res = await fetch(`http://localhost:3000/api/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
