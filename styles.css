@@ -441,3 +441,7 @@ form button:hover {
 .close:hover {
     color: black;
 }
+
+#register {
+    text-align: center;
+}
