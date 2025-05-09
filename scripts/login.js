@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const registerForm = document.getElementById("registerForm");
   const registerModal = document.getElementById("registerModal");
   const showRegister = document.getElementById("showRegister");
+  const closeRegisterModal = document.getElementById("closeRegisterModal");
+
 
   showRegister.addEventListener("click", () => {
     registerModal.style.display = "block";
@@ -13,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
       registerModal.style.display = "none";
     }
   });
+  
+  closeRegisterModal.addEventListener("click", () => {
+  registerModal.style.display = "none";
+});
 
   // Login request
   loginForm.addEventListener("submit", async (e) => {
