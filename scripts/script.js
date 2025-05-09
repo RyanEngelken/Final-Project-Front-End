@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Fetch and display courses
   function fetchCourses(searchTerm = '') {
     const url = searchTerm
-      ? `http://localhost:3000/api/courses?search=${encodeURIComponent(searchTerm)}`
-      : 'http://localhost:3000/api/courses';
+      ? `https://shared-slime-viola.glitch.me/api/courses?search=${encodeURIComponent(searchTerm)}`
+      : 'https://shared-slime-viola.glitch.me/api/courses';
 
     fetch(url, {
       headers: {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
           button.addEventListener('click', async function() {
             const courseId = this.dataset.id;
             try {
-              const response = await fetch(`http://localhost:3000/api/courses/${courseId}/enroll`, {
+              const response = await fetch(`https://shared-slime-viola.glitch.me/api/courses/${courseId}/enroll`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

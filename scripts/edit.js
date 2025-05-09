@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fetching all courses
   async function loadCourses() {
     try {
-      const response = await fetch(`http://localhost:3000/api/courses?owner=${userId}`, {
+      const response = await fetch(`https://shared-slime-viola.glitch.me/api/courses?owner=${userId}`, {
         headers: {
           'x-auth': token 
         }
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const courseId = this.dataset.id;
         if (confirm('Are you sure you want to delete this course?')) {
           try {
-            const response = await fetch(`http://localhost:3000/api/courses/${courseId}`, {
+            const response = await fetch(`https://shared-slime-viola.glitch.me/api/courses/${courseId}`, {
               method: 'DELETE',
               headers: {
                 'x-auth': token
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', async function () {
         const courseId = this.dataset.id;
         try {
-          const response = await fetch(`http://localhost:3000/api/courses/${courseId}`, {
+          const response = await fetch(`https://shared-slime-viola.glitch.me/api/courses/${courseId}`, {
             headers: {
               'x-auth': token
             }
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Edit Post
     try {
-      const response = await fetch(`http://localhost:3000/api/courses/${id}`, {
+      const response = await fetch(`https://shared-slime-viola.glitch.me/api/courses/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

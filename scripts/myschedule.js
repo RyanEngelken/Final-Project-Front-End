@@ -13,7 +13,7 @@ async function loadCourses() {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/courses?enrolled=true', {
+    const response = await fetch('https://shared-slime-viola.glitch.me/api/courses?enrolled=true', {
       headers: {
         'x-auth': token
       }
@@ -82,7 +82,7 @@ async function loadCourses() {
         const courseId = this.dataset.id;
         if (confirm('Are you sure you want to drop this course?')) {
           try {
-            const response = await fetch(`http://localhost:3000/api/courses/${courseId}/drop`, {
+            const response = await fetch(`https://shared-slime-viola.glitch.me/api/courses/${courseId}/drop`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/auth`, {
+      const res = await fetch(`https://shared-slime-viola.glitch.me/api/auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/users`, {
+      const res = await fetch(`https://shared-slime-viola.glitch.me/api/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

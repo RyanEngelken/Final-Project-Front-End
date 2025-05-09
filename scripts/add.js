@@ -27,7 +27,7 @@ async function addCourse(event) {
 
   // Add Post
   try {
-    const response = await fetch("http://localhost:3000/api/courses", {
+    const response = await fetch("https://shared-slime-viola.glitch.me/api/courses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
